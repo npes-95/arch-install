@@ -14,11 +14,11 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 
 # Users
-printf "Set root password:"
+printf "Set root password\n"
 passwd root
 useradd -m nick
 usermod -aG wheel nick
-printf "Set user password:"
+printf "Set user password\n"
 passwd nick
 
 # Packages
