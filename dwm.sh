@@ -60,5 +60,5 @@ xrandr --output $output --mode $resolution
 EOF
 fi
 
-printf "\e[1;32mDone! you can now reboot.\n[0m\n"
+printf "\e[1;32mDone! you can now reboot.\n\e[0m\n"
 

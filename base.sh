@@ -51,4 +51,4 @@ systemctl enable tlp
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\n[0m"
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\n\e[0m"
