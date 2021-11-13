@@ -22,12 +22,20 @@ printf "Set user password\n"
 passwd nick
 
 # Packages
-pacman -S grub base-devel doas networkmanager wpa_supplicant reflector bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh tlp firewalld
+pacman -S grub base-devel doas networkmanager wpa_supplicant reflector bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh tlp firewalld rsync
 
 echo "permit :wheel" >> /etc/doas.conf
 chown -c root:root /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
 doas -C /etc/doas.conf
+
+cat >/etc/xdg/reflector/reflector.conf <<EOL
+--save /etc/pacman.d/mirrorlist
+--country Germany
+--protocol https
+--latest 10
+--fastest 10
+EOL
 
 # Bootloader
 grub-install --target=i386-pc /dev/sdX

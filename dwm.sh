@@ -12,7 +12,6 @@ gen_xprofile=true
 
 doas timedatectl set-ntp true
 doas hwclock --systohc
-doas reflector -c $country -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 
 mkdir -p repos
 
